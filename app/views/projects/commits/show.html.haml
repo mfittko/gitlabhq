@@ -9,6 +9,11 @@
       %i.icon-rss
       Commits feed
 
+- if @project.gitlab_ci?
+  .pull-right
+    = link_to @project.gitlab_ci_service.builds_path(@ref) do
+      = image_tag @project.gitlab_ci_service.status_img_path(@ref), alt: "build status for #{@ref}"
+
 %ul.breadcrumb.repo-breadcrumb
   = commits_breadcrumbs
   %li.active

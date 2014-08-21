@@ -49,12 +49,12 @@ class GitlabCiService < CiService
     project_url + "/builds/#{sha}"
   end
 
-  def builds_path
-    project_url + "?ref=" + project.default_branch
+  def builds_path(ref=project.default_branch)
+    project_url + "?ref=#{ref}"
   end
 
-  def status_img_path
-    project_url + "/status.png?ref=" + project.default_branch
+  def status_img_path(ref=project.default_branch)
+    project_url + "/status.png?ref=#{ref}"
   end
 
   def title
