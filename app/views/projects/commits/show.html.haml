@@ -10,8 +10,8 @@
       Commits feed
 
 - if @project.gitlab_ci?
-  .pull-right
-    = link_to @project.gitlab_ci_service.builds_path(@ref), class: "btn" do
+  .status-badge-holder.pull-right
+    = link_to @project.gitlab_ci_service.builds_path(@ref), class: "btn", style: "padding: 0; margin: 1px;" do
       = image_tag @project.gitlab_ci_service.status_img_path(@ref), alt: "build status for #{@ref}"
 
 %ul.breadcrumb.repo-breadcrumb
